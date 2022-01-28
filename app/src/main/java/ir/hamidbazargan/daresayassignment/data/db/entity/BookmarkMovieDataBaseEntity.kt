@@ -3,9 +3,9 @@ package ir.hamidbazargan.daresayassignment.data.db.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "movies")
-data class MovieDataBaseEntity(
-    val id: Int,
+@Entity(tableName = "bookmarkmovies")
+data class BookmarkMovieDataBaseEntity(
+    @PrimaryKey val id: Int,
     var title: String,
     var originalTitle: String,
     var overview: String,
@@ -18,5 +18,6 @@ data class MovieDataBaseEntity(
     var video: Boolean,
     var voteAverage: Float,
     var voteCount: Int,
-    @PrimaryKey(autoGenerate = true) val row: Int? = null
+    var page: Int,
+    var totalPage: Int
 )

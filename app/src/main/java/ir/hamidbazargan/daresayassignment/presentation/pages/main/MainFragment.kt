@@ -1,4 +1,4 @@
-package ir.hamidbazargan.daresayassignment.presentation.main
+package ir.hamidbazargan.daresayassignment.presentation.pages.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayoutMediator
 import ir.hamidbazargan.daresayassignment.R
 import ir.hamidbazargan.daresayassignment.databinding.FragmentMainBinding
+import ir.hamidbazargan.daresayassignment.presentation.pages.main.PagesAdapter
 
 class MainFragment : Fragment() {
 

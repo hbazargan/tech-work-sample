@@ -1,7 +1,11 @@
-package ir.hamidbazargan.daresayassignment.domain.entity
+package ir.hamidbazargan.daresayassignment.data.db.entity
 
-data class MovieEntity(
-    var id: Int,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "popularmovies")
+data class PopularMovieDataBaseEntity(
+    @PrimaryKey val id: Int,
     var title: String,
     var originalTitle: String,
     var overview: String,

@@ -1,6 +1,7 @@
-package ir.hamidbazargan.daresayassignment.presentation.movielist.popular
+package ir.hamidbazargan.daresayassignment.presentation.pages.popular
 
 import ir.hamidbazargan.daresayassignment.presentation.movielist.*
+import ir.hamidbazargan.daresayassignment.presentation.movielist.MovieListFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 

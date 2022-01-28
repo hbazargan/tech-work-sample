@@ -1,4 +1,4 @@
-package ir.hamidbazargan.daresayassignment.presentation.detail
+package ir.hamidbazargan.daresayassignment.presentation.pages.detail
 
 import ir.hamidbazargan.daresayassignment.domain.entity.MovieEntity
 

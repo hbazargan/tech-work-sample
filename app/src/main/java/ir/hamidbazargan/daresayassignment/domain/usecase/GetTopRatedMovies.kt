@@ -1,12 +1,14 @@
 package ir.hamidbazargan.daresayassignment.domain.usecase
 
+import android.util.Log
 import ir.hamidbazargan.daresayassignment.domain.entity.MovieEntity
 import ir.hamidbazargan.daresayassignment.domain.repository.Repository
-import kotlinx.coroutines.flow.Flow
 
 class GetTopRatedMovies(
     private val repository: Repository
-) : UseCaseWithFlow<Int> {
-    override suspend fun execute(page: Int): Flow<List<MovieEntity>> =
-        repository.getTopRatedMovies(page)
+) : UseCaseWithParamReturn<Int, List<MovieEntity>> {
+    override suspend fun execute(page: Int): List<MovieEntity> {
+        Log.d("SAMPLE","GetTopRatedMovies")
+        return repository.getTopRatedMovies(page)
+    }
 }

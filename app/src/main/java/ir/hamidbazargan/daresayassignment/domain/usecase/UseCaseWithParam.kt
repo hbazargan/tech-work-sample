@@ -1,5 +1,5 @@
 package ir.hamidbazargan.daresayassignment.domain.usecase
 
-interface UseCase<P> {
+interface UseCaseWithParam<P> {
     suspend fun execute(page: P)
 }

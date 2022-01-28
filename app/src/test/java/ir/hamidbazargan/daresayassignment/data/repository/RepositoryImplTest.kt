@@ -2,14 +2,11 @@ package ir.hamidbazargan.daresayassignment.data.repository
 
 import io.mockk.*
 import ir.hamidbazargan.daresayassignment.data.db.MovieDao
-import ir.hamidbazargan.daresayassignment.data.db.entity.MovieDataBaseEntity
 import ir.hamidbazargan.daresayassignment.data.mapper.toMovieEntity
 import ir.hamidbazargan.daresayassignment.data.webservice.WebServiceApi
 import ir.hamidbazargan.daresayassignment.data.webservice.reponse.MovieResponse
 import ir.hamidbazargan.daresayassignment.data.webservice.reponse.MoviesResponse
 import ir.hamidbazargan.daresayassignment.domain.entity.MovieEntity
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test
 
@@ -63,7 +60,7 @@ class RepositoryImplTest {
         runBlockingTest {
             coEvery { apiService.getPopularMovies(1) } returns moviesResponse
             var response: List<MovieEntity>? = null
-            repository.getPopularMovies(1).collect {
+            repository.getPopularMoviesChange(1).collect {
                 response = it
             }
 

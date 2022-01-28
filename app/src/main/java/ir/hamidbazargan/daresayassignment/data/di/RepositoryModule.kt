@@ -7,6 +7,10 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
     single<Repository> {
-        RepositoryImpl(get(), get<MovieDataBase>().MovieDao())
+        RepositoryImpl(
+            webServiceApi = get(),
+            movieDao = get<MovieDataBase>().MovieDao(),
+            movieDataBase = get<MovieDataBase>()
+        )
     }
 }

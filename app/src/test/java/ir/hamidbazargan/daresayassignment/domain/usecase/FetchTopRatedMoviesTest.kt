@@ -5,15 +5,14 @@ import io.mockk.coVerify
 import io.mockk.mockk
 import ir.hamidbazargan.daresayassignment.domain.entity.MovieEntity
 import ir.hamidbazargan.daresayassignment.domain.repository.Repository
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test
 
-class GetPopularMoviesTest {
+class FetchTopRatedMoviesTest {
 
     private val repository = mockk<Repository>()
-    private val useCase = GetPopularMovies(repository)
+    private val useCase = FetchTopRatedMovies(repository)
 
     private val movieEntity = MovieEntity(
         id = 3,
@@ -34,7 +33,7 @@ class GetPopularMoviesTest {
     @Test
     fun execute() {
         runBlockingTest {
-            coEvery { repository.getPopularMovies(1) } returns flow {
+            coEvery { repository.getTopRatedMovies(1) } returns flow {
                 emit(listOf(movieEntity))
             }
 
@@ -46,7 +45,7 @@ class GetPopularMoviesTest {
             assert(responses?.size == 1)
 
             coVerify(exactly = 1) {
-                repository.getPopularMovies(1)
+                repository.getTopRatedMovies(1)
             }
 
         }

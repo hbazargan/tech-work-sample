@@ -7,6 +7,8 @@ import ir.hamidbazargan.daresayassignment.domain.entity.MovieEntity
 import ir.hamidbazargan.daresayassignment.domain.repository.Repository
 import ir.hamidbazargan.daresayassignment.domain.usecase.GetMovie
 import ir.hamidbazargan.daresayassignment.domain.usecase.SaveMovie
+import ir.hamidbazargan.daresayassignment.presentation.pages.detail.UiModel
+import ir.hamidbazargan.daresayassignment.presentation.pages.detail.DetailViewmodel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch

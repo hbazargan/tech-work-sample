@@ -16,7 +16,8 @@ import com.google.android.material.snackbar.Snackbar
 import ir.hamidbazargan.daresayassignment.R
 import ir.hamidbazargan.daresayassignment.databinding.FragmentMovieListBinding
 import ir.hamidbazargan.daresayassignment.domain.entity.MovieEntity
-import ir.hamidbazargan.daresayassignment.presentation.main.MainFragmentDirections
+import ir.hamidbazargan.daresayassignment.presentation.pages.main.MainFragmentDirections
+import ir.hamidbazargan.daresayassignment.presentation.movielist.paging.MovieListPagingAdapter
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -26,7 +27,7 @@ abstract class MovieListFragment : Fragment(), ClickListener {
 
     private var _binding: FragmentMovieListBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: MovieListAdapter
+    private lateinit var adapter: MovieListPagingAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +45,7 @@ abstract class MovieListFragment : Fragment(), ClickListener {
     }
 
     private fun initAdapter() {
-        adapter = MovieListAdapter(MovieListDiffCallback(), this)
+        adapter = MovieListPagingAdapter(MovieListDiffCallback(), this)
         lifecycleScope.launch {
             adapter.loadStateFlow.collectLatest { state ->
                 binding.loading.isVisible = state.refresh is LoadState.Loading
